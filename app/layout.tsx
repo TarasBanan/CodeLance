@@ -5,7 +5,10 @@ import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'CodeLance — IT-аутсорс компания',
-  description: 'Разработка сайтов, приложений и IT-инфраструктуры для бизнеса.'
+  description: 'Разработка сайтов, приложений и IT-инфраструктуры для бизнеса.',
+  icons: {
+    icon: '/api/favicon'
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
