@@ -42,7 +42,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <section className="rounded-soft border border-line p-6">
         <h2 className="text-2xl">Стоимость</h2>
         <p className="mt-2 text-stone">Базовая цена: {service.priceFrom}</p>
-        <Link href={`/pricing/${service.slug}`} className="mt-4 inline-block underline">Открыть подробные пакеты и сроки</Link>
+        <Link href={`/pricing/${service.slug}`} className="mt-4 inline-flex w-fit pill-btn bg-canvas text-near">Открыть подробные пакеты и сроки</Link>
       </section>
     </div>
   );

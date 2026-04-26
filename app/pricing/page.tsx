@@ -38,7 +38,7 @@ export default function PricingPage() {
               <h3 className="text-xl">{copy.title}</h3>
               <p className="mt-2 text-stone">{copy.shortDescription}</p>
               <p className="mt-3 text-sm">{tr(lang, 'Base price', 'Базовая стоимость')}: {service.priceFrom}</p>
-              <Link href={`/pricing/${service.slug}`} className="mt-4 inline-block underline">{tr(lang, 'Open service pricing', 'Открыть цены по услуге')}</Link>
+              <Link href={`/pricing/${service.slug}`} className="mt-4 inline-flex w-fit pill-btn bg-canvas text-near">{tr(lang, 'Open service pricing', 'Открыть цены по услуге')}</Link>
             </article>
           );
         })}

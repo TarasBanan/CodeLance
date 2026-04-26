@@ -32,7 +32,7 @@ export default function PortfolioPage() {
                   <li key={metric}>• {metric}</li>
                 ))}
               </ul>
-              <Link href={`/portfolio/${project.slug}`} className="mt-auto pt-6 underline">{tr(lang, 'Project details', 'Подробнее о проекте')}</Link>
+              <Link href={`/portfolio/${project.slug}`} className="mt-auto inline-flex w-fit pill-btn bg-canvas text-near">{tr(lang, 'Project details', 'Подробнее о проекте')}</Link>
             </article>
           );
         })}

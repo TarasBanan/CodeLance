@@ -38,7 +38,7 @@ export default function HomePage() {
       <section>
         <div className="mb-6 flex items-end justify-between gap-4">
           <h2 className="text-3xl font-medium">{tr(lang, 'Services', 'Услуги')}</h2>
-          <Link href="/services" className="text-sm underline">{tr(lang, 'All services', 'Все услуги')}</Link>
+          <Link href="/services" className="pill-btn bg-canvas text-near">{tr(lang, 'All services', 'Все услуги')}</Link>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.slice(0, 9).map((service) => {
@@ -48,7 +48,7 @@ export default function HomePage() {
                 <h3 className="text-2xl leading-tight">{copy.title}</h3>
                 <p className="mt-3 text-stone">{copy.shortDescription}</p>
                 <p className="mt-auto pt-6 text-base text-near">{service.priceFrom}</p>
-                <Link href={`/services/${service.slug}`} className="mt-3 inline-block text-sm underline">{tr(lang, 'Details & pricing', 'Подробнее и цены')}</Link>
+                <Link href={`/services/${service.slug}`} className="mt-3 inline-flex w-fit pill-btn bg-canvas text-near">{tr(lang, 'Details & pricing', 'Подробнее и цены')}</Link>
               </article>
             );
           })}
@@ -73,7 +73,7 @@ export default function HomePage() {
       <section>
         <div className="mb-6 flex items-end justify-between gap-4">
           <h2 className="text-3xl font-medium">{tr(lang, 'Portfolio', 'Портфолио')}</h2>
-          <Link href="/portfolio" className="text-sm underline">{tr(lang, 'View all cases', 'Смотреть все кейсы')}</Link>
+          <Link href="/portfolio" className="pill-btn bg-canvas text-near">{tr(lang, 'View all cases', 'Смотреть все кейсы')}</Link>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, 6).map((project) => {
@@ -83,7 +83,7 @@ export default function HomePage() {
                 <h3 className="text-xl">{copy.title}</h3>
                 <p className="mt-2 text-sm text-stone">{copy.type}</p>
                 <p className="mt-3 text-sm">{copy.summary}</p>
-                <Link href={`/portfolio/${project.slug}`} className="mt-auto pt-6 text-sm underline">{tr(lang, 'Details', 'Подробнее')}</Link>
+                <Link href={`/portfolio/${project.slug}`} className="mt-auto inline-flex w-fit pill-btn bg-canvas text-near">{tr(lang, 'Details', 'Подробнее')}</Link>
               </article>
             );
           })}

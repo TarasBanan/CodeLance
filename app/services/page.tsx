@@ -29,8 +29,8 @@ export default function ServicesPage() {
               <p className="mt-3 text-sm text-stone">{service.audience}</p>
               <p className="mt-auto pt-6 text-base">{service.priceFrom}</p>
               <div className="mt-3 flex flex-wrap gap-3">
-                <Link href={`/services/${service.slug}`} className="text-sm underline">{tr(lang, 'Service details', 'Описание услуги')}</Link>
-                <Link href={`/pricing/${service.slug}`} className="text-sm underline">{tr(lang, 'Custom pricing', 'Индивидуальные цены')}</Link>
+                <Link href={`/services/${service.slug}`} className="pill-btn bg-canvas text-near">{tr(lang, 'Service details', 'Описание услуги')}</Link>
+                <Link href={`/pricing/${service.slug}`} className="pill-btn bg-canvas text-near">{tr(lang, 'Custom pricing', 'Индивидуальные цены')}</Link>
               </div>
             </article>
           );
