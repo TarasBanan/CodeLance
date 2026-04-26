@@ -25,9 +25,9 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <Link href={`/api/lang?lang=${lang === 'en' ? 'ru' : 'en'}`} className="pill-btn bg-canvas text-near">
+          <a href={`/api/lang?lang=${lang === 'en' ? 'ru' : 'en'}`} className="pill-btn bg-canvas text-near">
             {lang === 'en' ? 'RU' : 'EN'}
-          </Link>
+          </a>
           <Link href="/contacts" className="pill-btn bg-ink text-canvas">{tr(lang, 'Discuss project', 'Обсудить проект')}</Link>
         </div>
       </div>
