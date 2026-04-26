@@ -35,6 +35,13 @@ const projectEn: Record<string, { title: string; type: string; summary: string }
   'law-firm-site': { title: 'Law Firm Corporate Website', type: 'Corporate', summary: 'Lead-focused website with practices, case studies, and contact intake.' }
 };
 
+const packageEn: Record<string, { name: string; description: string; price: string }> = {
+  'Эконом': { name: 'Economy', description: 'Fast launch package for small businesses.', price: 'from ₽60,000' },
+  'Стандарт': { name: 'Standard', description: 'A full product with core integrations.', price: 'from ₽150,000' },
+  'Бизнес': { name: 'Business', description: 'Turnkey delivery with analytics and DevOps.', price: 'from ₽350,000' },
+  Enterprise: { name: 'Enterprise', description: 'Dedicated team and advanced architecture.', price: 'from ₽900,000' }
+};
+
 export function serviceText(lang: Lang, slug: string, ruTitle: string, ruDescription: string) {
   const en = serviceEn[slug];
   if (!en) {
@@ -55,4 +62,15 @@ export function projectText(lang: Lang, slug: string, ruTitle: string, ruType: s
   return lang === 'ru'
     ? { title: ruTitle, type: ruType, summary: ruSummary }
     : { title: en.title, type: en.type, summary: en.summary };
+}
+
+export function packageText(lang: Lang, ruName: string, ruDescription: string, ruPrice: string) {
+  const en = packageEn[ruName];
+  if (!en) {
+    return { name: ruName, description: ruDescription, price: ruPrice };
+  }
+
+  return lang === 'ru'
+    ? { name: ruName, description: ruDescription, price: ruPrice }
+    : { name: en.name, description: en.description, price: en.price };
 }

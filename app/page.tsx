@@ -3,7 +3,7 @@ import { InjectedAnnouncements } from '@/components/content/InjectedAnnouncement
 import { InjectedProjects } from '@/components/content/InjectedProjects';
 import { InjectedServices } from '@/components/content/InjectedServices';
 import { packageOffers, projects, services } from '@/data/site';
-import { getLang, projectText, serviceText, tr } from '@/lib/i18n';
+import { getLang, packageText, projectText, serviceText, tr } from '@/lib/i18n';
 
 export const metadata = {
   title: 'Home | CodeLance',
@@ -60,13 +60,16 @@ export default function HomePage() {
       <section>
         <h2 className="mb-6 text-3xl font-medium">{tr(lang, 'Packages', 'Тарифные пакеты')}</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {packageOffers.map((item) => (
-            <article key={item.name} className="flex min-h-56 flex-col rounded-soft border border-line p-6">
-              <h3 className="text-xl">{item.name}</h3>
-              <p className="mt-2 text-stone">{item.description}</p>
-              <p className="mt-auto pt-6 text-lg">{item.price}</p>
-            </article>
-          ))}
+          {packageOffers.map((item) => {
+            const pack = packageText(lang, item.name, item.description, item.price);
+            return (
+              <article key={item.name} className="flex min-h-56 flex-col rounded-soft border border-line p-6">
+                <h3 className="text-xl">{pack.name}</h3>
+                <p className="mt-2 text-stone">{pack.description}</p>
+                <p className="mt-auto pt-6 text-lg">{pack.price}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 

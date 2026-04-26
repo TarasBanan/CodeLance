@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { packageOffers, services } from '@/data/site';
-import { getLang, serviceText, tr } from '@/lib/i18n';
+import { getLang, packageText, serviceText, tr } from '@/lib/i18n';
 
 export const metadata = {
   title: 'Pricing | CodeLance',
@@ -21,13 +21,16 @@ export default function PricingPage() {
       <p className="max-w-3xl text-stone">{tr(lang, 'Each service has its own pricing page with detailed packages, timelines, and deliverables.', 'Для каждой услуги есть отдельная страница с детальными пакетами, сроками и составом работ.')}</p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {packageOffers.map((item) => (
-          <article key={item.name} className="flex min-h-52 flex-col rounded-soft border border-line p-6">
-            <h2 className="text-2xl">{item.name}</h2>
-            <p className="mt-2 text-stone">{item.description}</p>
-            <p className="mt-auto pt-6">{item.price}</p>
-          </article>
-        ))}
+        {packageOffers.map((item) => {
+          const pack = packageText(lang, item.name, item.description, item.price);
+          return (
+            <article key={item.name} className="flex min-h-52 flex-col rounded-soft border border-line p-6">
+              <h2 className="text-2xl">{pack.name}</h2>
+              <p className="mt-2 text-stone">{pack.description}</p>
+              <p className="mt-auto pt-6">{pack.price}</p>
+            </article>
+          );
+        })}
       </div>
 
       <div className="mt-12 grid gap-4 md:grid-cols-2">
