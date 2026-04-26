@@ -8,7 +8,7 @@ export function getLang(): Lang {
 }
 
 export function tr(lang: Lang, en: string, ru: string) {
-  return lang === 'ru' ? 'ru' : 'en';
+  return lang === 'ru' ? ru : en;
 }
 
 const serviceEn: Record<string, { title: string; shortDescription: string }> = {
