@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { AdminContentManager } from '@/components/admin/AdminContentManager';
 
 export function AdminLogin() {
   const [error, setError] = useState('');
@@ -24,9 +25,12 @@ export function AdminLogin() {
 
   if (isAuthorized) {
     return (
-      <section className="rounded-soft border border-line p-6">
-        <h2 className="text-2xl">Админ-панель</h2>
-        <p className="mt-2 text-stone">Вход выполнен. Это скрытая страница, доступная только по прямому URL `/admin`.</p>
+      <section className="space-y-6">
+        <div className="rounded-soft border border-line p-6">
+          <h2 className="text-2xl">Админ-панель</h2>
+          <p className="mt-2 text-stone">Вход выполнен. Вы можете добавлять контент, который сразу появится на сайте (главная, услуги, портфолио).</p>
+        </div>
+        <AdminContentManager />
       </section>
     );
   }
