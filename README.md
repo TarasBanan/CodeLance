@@ -105,13 +105,28 @@ pnpm typecheck   # TypeScript проверка
 
 Ниже локальные ссылки на скриншоты (можно заполнить своими файлами):
 
+##Главная
 ![Главная страница](docs/screenshots/home.png)
+
+##Услуги
 ![Услуги](docs/screenshots/services.png)
+
+##Цены
 ![Цены](docs/screenshots/pricing.png)
+
+##Портфолио
 ![Портфолио](docs/screenshots/portfolio.png)
+
+##О компании
 ![О компании](docs/screenshots/about.png)
+
+##Контакты
 ![Контакты](docs/screenshots/contacts.png)
+
+##Админ-панель
 ![Админ-панель (вход)](docs/screenshots/admin-login.png)
+
+##Админ-панель
 ![Админ-панель (контент)](docs/screenshots/admin-content.png)
 
 ## Частые проблемы
