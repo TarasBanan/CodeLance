@@ -11,7 +11,7 @@ export function InjectedAnnouncements() {
 
   return (
     <section>
-      <h2 className="mb-6 text-3xl font-medium">Обновления от админа</h2>
+      <h2 className="mb-6 text-3xl font-medium">Admin updates</h2>
       <div className="grid gap-4 md:grid-cols-2">
         {announcements.map((item) => (
           <article key={item.id} className="rounded-soft border border-line bg-snow p-6">

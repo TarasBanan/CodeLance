@@ -1,15 +1,18 @@
 import Link from 'next/link';
-
-const links = [
-  { href: '/', label: 'Главная' },
-  { href: '/services', label: 'Услуги' },
-  { href: '/pricing', label: 'Цены' },
-  { href: '/portfolio', label: 'Портфолио' },
-  { href: '/about', label: 'О нас' },
-  { href: '/contacts', label: 'Контакты' }
-];
+import { getLang, tr } from '@/lib/i18n';
 
 export function Header() {
+  const lang = getLang();
+
+  const links = [
+    { href: '/', label: tr(lang, 'Home', 'Главная') },
+    { href: '/services', label: tr(lang, 'Services', 'Услуги') },
+    { href: '/pricing', label: tr(lang, 'Pricing', 'Цены') },
+    { href: '/portfolio', label: tr(lang, 'Portfolio', 'Портфолио') },
+    { href: '/about', label: tr(lang, 'About', 'О нас') },
+    { href: '/contacts', label: tr(lang, 'Contacts', 'Контакты') }
+  ];
+
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-canvas/95 backdrop-blur">
       <div className="container-main flex items-center justify-between py-4">
@@ -21,7 +24,12 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="/contacts" className="pill-btn bg-ink text-canvas">Обсудить проект</Link>
+        <div className="flex items-center gap-3">
+          <Link href={`/api/lang?lang=${lang === 'en' ? 'ru' : 'en'}`} className="pill-btn bg-canvas text-near">
+            {lang === 'en' ? 'RU' : 'EN'}
+          </Link>
+          <Link href="/contacts" className="pill-btn bg-ink text-canvas">{tr(lang, 'Discuss project', 'Обсудить проект')}</Link>
+        </div>
       </div>
     </header>
   );

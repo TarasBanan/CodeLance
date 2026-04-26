@@ -77,11 +77,11 @@ export function AdminContentManager() {
   return (
     <div className="space-y-8">
       <section className="rounded-soft border border-line p-6">
-        <h3 className="text-xl">Добавить анонс на главную</h3>
+        <h3 className="text-xl">Add homepage announcement</h3>
         <form onSubmit={handleAddAnnouncement} className="mt-4 grid gap-3 md:grid-cols-2">
-          <input required name="title" placeholder="Заголовок" className="rounded-pill border border-line px-4 py-3" />
-          <input required name="text" placeholder="Текст анонса" className="rounded-pill border border-line px-4 py-3" />
-          <button type="submit" className="pill-btn w-fit bg-ink text-canvas">Добавить анонс</button>
+          <input required name="title" placeholder="Title" className="rounded-pill border border-line px-4 py-3" />
+          <input required name="text" placeholder="Announcement text" className="rounded-pill border border-line px-4 py-3" />
+          <button type="submit" className="pill-btn w-fit bg-ink text-canvas">Add announcement</button>
         </form>
         <ul className="mt-4 space-y-2 text-sm text-stone">
           {announcements.map((item) => (
@@ -96,7 +96,7 @@ export function AdminContentManager() {
                   saveAnnouncements(next);
                 }}
               >
-                Удалить
+                Delete
               </button>
             </li>
           ))}
@@ -104,12 +104,12 @@ export function AdminContentManager() {
       </section>
 
       <section className="rounded-soft border border-line p-6">
-        <h3 className="text-xl">Добавить услугу</h3>
+        <h3 className="text-xl">Add service</h3>
         <form onSubmit={handleAddService} className="mt-4 grid gap-3 md:grid-cols-2">
-          <input required name="title" placeholder="Название услуги" className="rounded-pill border border-line px-4 py-3" />
-          <input required name="price" placeholder="Цена (например: от 120 000 ₽)" className="rounded-pill border border-line px-4 py-3" />
-          <input required name="description" placeholder="Краткое описание" className="rounded-pill border border-line px-4 py-3 md:col-span-2" />
-          <button type="submit" className="pill-btn w-fit bg-ink text-canvas">Добавить услугу</button>
+          <input required name="title" placeholder="Service name" className="rounded-pill border border-line px-4 py-3" />
+          <input required name="price" placeholder="Price (example: from $2,000)" className="rounded-pill border border-line px-4 py-3" />
+          <input required name="description" placeholder="Short description" className="rounded-pill border border-line px-4 py-3 md:col-span-2" />
+          <button type="submit" className="pill-btn w-fit bg-ink text-canvas">Add service</button>
         </form>
         <ul className="mt-4 space-y-2 text-sm text-stone">
           {services.map((item) => (
@@ -124,7 +124,7 @@ export function AdminContentManager() {
                   saveServices(next);
                 }}
               >
-                Удалить
+                Delete
               </button>
             </li>
           ))}
@@ -132,12 +132,12 @@ export function AdminContentManager() {
       </section>
 
       <section className="rounded-soft border border-line p-6">
-        <h3 className="text-xl">Добавить проект в портфолио</h3>
+        <h3 className="text-xl">Add portfolio project</h3>
         <form onSubmit={handleAddProject} className="mt-4 grid gap-3 md:grid-cols-2">
-          <input required name="title" placeholder="Название проекта" className="rounded-pill border border-line px-4 py-3" />
-          <input required name="type" placeholder="Тип проекта" className="rounded-pill border border-line px-4 py-3" />
-          <input required name="summary" placeholder="Краткое описание" className="rounded-pill border border-line px-4 py-3 md:col-span-2" />
-          <button type="submit" className="pill-btn w-fit bg-ink text-canvas">Добавить проект</button>
+          <input required name="title" placeholder="Project name" className="rounded-pill border border-line px-4 py-3" />
+          <input required name="type" placeholder="Project type" className="rounded-pill border border-line px-4 py-3" />
+          <input required name="summary" placeholder="Short description" className="rounded-pill border border-line px-4 py-3 md:col-span-2" />
+          <button type="submit" className="pill-btn w-fit bg-ink text-canvas">Add project</button>
         </form>
         <ul className="mt-4 space-y-2 text-sm text-stone">
           {projects.map((item) => (
@@ -152,7 +152,7 @@ export function AdminContentManager() {
                   saveProjects(next);
                 }}
               >
-                Удалить
+                Delete
               </button>
             </li>
           ))}

@@ -11,7 +11,7 @@ export function InjectedServices() {
 
   return (
     <section>
-      <h2 className="mb-6 text-3xl font-medium">Добавленные через админ-панель услуги</h2>
+      <h2 className="mb-6 text-3xl font-medium">Services added via admin</h2>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
           <article key={service.id} className="flex min-h-64 flex-col rounded-soft border border-line bg-snow p-6">

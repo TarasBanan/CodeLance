@@ -1,21 +1,24 @@
 import Link from 'next/link';
 import { packageOffers, services } from '@/data/site';
+import { getLang, serviceText, tr } from '@/lib/i18n';
 
 export const metadata = {
-  title: 'Цены | CodeLance',
-  description: 'Пакеты и стоимость отдельных услуг.',
+  title: 'Pricing | CodeLance',
+  description: 'Packages and service-specific pricing.',
   openGraph: {
-    title: 'Цены | CodeLance',
-    description: 'Пакеты и стоимость отдельных услуг.',
+    title: 'Pricing | CodeLance',
+    description: 'Packages and service-specific pricing.',
     url: '/pricing'
   }
 };
 
 export default function PricingPage() {
+  const lang = getLang();
+
   return (
     <div className="container-main py-16">
-      <h1 className="mb-8 text-4xl font-medium">Цены</h1>
-      <p className="max-w-3xl text-stone">Для каждой услуги есть отдельная страница с детальными пакетами, сроками и составом работ. Выберите нужное направление.</p>
+      <h1 className="mb-8 text-4xl font-medium">{tr(lang, 'Pricing', 'Цены')}</h1>
+      <p className="max-w-3xl text-stone">{tr(lang, 'Each service has its own pricing page with detailed packages, timelines, and deliverables.', 'Для каждой услуги есть отдельная страница с детальными пакетами, сроками и составом работ.')}</p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {packageOffers.map((item) => (
@@ -28,14 +31,17 @@ export default function PricingPage() {
       </div>
 
       <div className="mt-12 grid gap-4 md:grid-cols-2">
-        {services.map((service) => (
-          <article key={service.slug} className="rounded-soft border border-line p-6">
-            <h3 className="text-xl">{service.title}</h3>
-            <p className="mt-2 text-stone">{service.shortDescription}</p>
-            <p className="mt-3 text-sm">Базовая стоимость: {service.priceFrom}</p>
-            <Link href={`/pricing/${service.slug}`} className="mt-4 inline-block underline">Открыть цены по услуге</Link>
-          </article>
-        ))}
+        {services.map((service) => {
+          const copy = serviceText(lang, service.slug, service.title, service.shortDescription);
+          return (
+            <article key={service.slug} className="rounded-soft border border-line p-6">
+              <h3 className="text-xl">{copy.title}</h3>
+              <p className="mt-2 text-stone">{copy.shortDescription}</p>
+              <p className="mt-3 text-sm">{tr(lang, 'Base price', 'Базовая стоимость')}: {service.priceFrom}</p>
+              <Link href={`/pricing/${service.slug}`} className="mt-4 inline-block underline">{tr(lang, 'Open service pricing', 'Открыть цены по услуге')}</Link>
+            </article>
+          );
+        })}
       </div>
     </div>
   );

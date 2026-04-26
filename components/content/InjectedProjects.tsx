@@ -11,7 +11,7 @@ export function InjectedProjects() {
 
   return (
     <section>
-      <h2 className="mb-6 text-3xl font-medium">Новые проекты из админ-панели</h2>
+      <h2 className="mb-6 text-3xl font-medium">Projects added via admin</h2>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <article key={project.id} className="flex min-h-72 flex-col rounded-soft border border-line p-6">

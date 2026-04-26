@@ -20,15 +20,15 @@ export function AdminLogin() {
     }
 
     setIsAuthorized(false);
-    setError('Неверный логин или пароль.');
+    setError('Invalid login or password.');
   };
 
   if (isAuthorized) {
     return (
       <section className="space-y-6">
         <div className="rounded-soft border border-line p-6">
-          <h2 className="text-2xl">Админ-панель</h2>
-          <p className="mt-2 text-stone">Вход выполнен. Вы можете добавлять контент, который сразу появится на сайте (главная, услуги, портфолио).</p>
+          <h2 className="text-2xl">Admin panel</h2>
+          <p className="mt-2 text-stone">Login successful. You can now add content that appears on the live pages (home, services, portfolio).</p>
         </div>
         <AdminContentManager />
       </section>
@@ -37,9 +37,9 @@ export function AdminLogin() {
 
   return (
     <form onSubmit={onSubmit} className="max-w-md space-y-4 rounded-soft border border-line p-6">
-      <input name="login" required placeholder="Логин" className="w-full rounded-pill border border-line px-4 py-3" />
-      <input name="password" type="password" required placeholder="Пароль" className="w-full rounded-pill border border-line px-4 py-3" />
-      <button type="submit" className="pill-btn bg-ink text-canvas">Войти</button>
+      <input name="login" required placeholder="Login" className="w-full rounded-pill border border-line px-4 py-3" />
+      <input name="password" type="password" required placeholder="Password" className="w-full rounded-pill border border-line px-4 py-3" />
+      <button type="submit" className="pill-btn bg-ink text-canvas">Sign in</button>
       {error ? <p className="text-sm text-stone">{error}</p> : null}
     </form>
   );
